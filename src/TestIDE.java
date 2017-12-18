@@ -6,16 +6,20 @@ public class TestIDE {
         double rng = Math.random();
         int random = (int) (rng * 100) + 1;
         int svar = 0;
-        while (true) {
+        int tries = 0;
+        while (tries < 10) {
             System.out.println("gissa");
             svar = gissning.nextInt();
             if (svar > random) {
                 System.out.println("Talet ska vara mindre");
+                tries++;
             } else if(svar == random){
                 System.out.println("Du gissade rätt!");
                 System.exit(0);
+                tries++;
             }else if (svar < random){
                 System.out.println("talet ska vara större");
+                tries++;
         }
     }
 }}
